@@ -1,11 +1,13 @@
 
 
 #include "Fraction.hpp"
+using namespace ariel;
 
-Fraction::Fraction(int num1, int num2) {
-    this->num = num1;
-    this->den = num2;
+Fraction::Fraction(const int &num1,const int &num2): num(num1) , den(num2) {
 }
+Fraction::Fraction(const Fraction &other) : num(other.num), den(other.den) {
+}
+
 
 Fraction::Fraction(int n): Fraction(n,1) {}
 
@@ -13,9 +15,9 @@ Fraction::operator double() const {
     return double(num) / double(den);
 }
 
-Fraction::operator string() const {
-    return to_string(num) + "/" + to_string(den);
-}
+//Fraction::operator string() const {
+//    return to_string(num) + "/" + to_string(den);
+//}
 
 //Fraction::Fraction(double num) {
 //    this->num = num;
@@ -150,8 +152,9 @@ bool Fraction::operator>=(const double &other) {
     return n >= other;
 }
 
-std::ostream &operator<<(std::ostream &output, const Fraction &fraction) {
-    return output << to_string(fraction.getNum()) << to_string(fraction.getDen());
+std::ostream &operator<<(std::ostream &output, const Fraction &f) {
+    output << f.num << '/' << f.den;
+    return output;
 }
 
 std::istream &operator>>(std::istream &input, Fraction &fraction) {
@@ -187,3 +190,4 @@ const Fraction Fraction::operator--(int) { //n--
     Fraction cpy(*this);
     return cpy;
 }
+

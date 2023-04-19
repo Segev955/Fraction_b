@@ -4,6 +4,7 @@
 #define FRACTION_A_FRACTION_H
 
 #include <stdio.h>
+#include <iostream>
 #include <string>
 
 namespace ariel {}
@@ -14,8 +15,9 @@ private:
     int num;
     int den;
 public:
-    Fraction(int num1, int num2);
+    Fraction(const int &num1,const int &num2);
     Fraction(int n);
+    Fraction(const Fraction &other);
 //    Fraction(double num);
 
     int getNum() const;
@@ -65,5 +67,6 @@ public:
 
 
 #endif //FRACTION_A_FRACTION_H
+
 
 
