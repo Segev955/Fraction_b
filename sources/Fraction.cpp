@@ -1,16 +1,13 @@
-
-
 #include "Fraction.hpp"
 using namespace ariel;
-
+//constructor
 Fraction::Fraction(const int &num1,const int &num2): num(num1) , den(num2) {
 }
-Fraction::Fraction(const Fraction &other) : num(other.num), den(other.den) {
-}
-
-
+//copy
+Fraction::Fraction(const Fraction &other) : num(other.num), den(other.den) {}
+//int
 Fraction::Fraction(int n): Fraction(n,1) {}
-
+//double convert
 Fraction::operator double() const {
     return double(num) / double(den);
 }
@@ -152,8 +149,8 @@ bool Fraction::operator>=(const double &other) {
     return n >= other;
 }
 
-std::ostream &operator<<(std::ostream &output, const Fraction &f) {
-    output << f.num << '/' << f.den;
+std::ostream &operator<<(std::ostream &output, const Fraction &fraction) {
+    output << fraction.num << '/' << fraction.den;
     return output;
 }
 
