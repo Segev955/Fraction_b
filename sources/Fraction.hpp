@@ -25,6 +25,7 @@ public:
     Fraction operator+(const Fraction &other);
     Fraction operator+(const double &other);
 
+
     Fraction operator-(const Fraction &other);
     Fraction operator-(const double &other);
     Fraction operator-(const int &other);
@@ -68,6 +69,7 @@ public:
 
 
 #endif //FRACTION_A_FRACTION_H
+
 
 
 

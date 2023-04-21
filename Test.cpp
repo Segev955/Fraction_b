@@ -12,8 +12,8 @@ TEST_CASE("init") {
     CHECK(a.getDen() == 2);
 
     Fraction b(8, 2);
-    CHECK(b.getNum() == 8);
-    CHECK(b.getDen() == 2);
+    CHECK(b.getNum() == 4);
+    CHECK(b.getDen() == 1);
 }
 
 TEST_CASE("operators") {
@@ -59,19 +59,19 @@ TEST_CASE("double") {
 
 TEST_CASE("Adds") {
     Fraction a(1, 2);
-    CHECK(a++ == Fraction(3, 2));
+    CHECK(a++ == Fraction(1, 2));
     CHECK(++a == Fraction(3, 2));
     Fraction b(5, 2);
-    CHECK(b++ == Fraction(7, 2));
+    CHECK(b++ == Fraction(5, 2));
     CHECK(++b == Fraction(7, 2));
 }
 
 TEST_CASE("Substracts") {
     Fraction a(3, 2);
-    CHECK(a-- == Fraction(1, 2));
+    CHECK(a-- == Fraction(3, 2));
     CHECK(--a == Fraction(1, 2));
     Fraction b(7, 2);
-    CHECK(b-- == Fraction(5, 2));
+    CHECK(b-- == Fraction(7, 2));
     CHECK(--b == Fraction(5, 2));
 
 }
@@ -93,4 +93,5 @@ TEST_CASE("ostream") {
     s << b;
     CHECK_EQ(s.str(), "10");
 }
+
 

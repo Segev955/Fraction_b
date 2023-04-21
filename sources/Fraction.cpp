@@ -2,6 +2,9 @@
 using namespace ariel;
 //constructor
 Fraction::Fraction(const int &num1,const int &num2): num(num1) , den(num2) {
+    if (num2 == 0) {
+        throw invalid_argument("Division by zero is undefined");
+    }
     reduce();
 }
 //copy
@@ -171,22 +174,25 @@ std::istream &operator>>(std::istream &input, Fraction &fraction) {
 
 
 Fraction &Fraction::operator++() { //++n
-
+    this->num += this->den;
     return *this;
 }
 
 const Fraction Fraction::operator++(int) {//n++
-    Fraction cpy(*this);
-    return cpy;
+    Fraction current = *this;
+    this->num += this->den;
+    return current;
 }
 
 Fraction &Fraction::operator--() { //--n
+    this->num -= this->den;
     return *this;
 }
 
 const Fraction Fraction::operator--(int) { //n--
-    Fraction cpy(*this);
-    return cpy;
+    Fraction current = *this;
+    this->num -= this->den;
+    return current;
 }
 
 int gcd (int a, int b) {
@@ -201,4 +207,5 @@ void Fraction::reduce() {
     this->num = num / n;
     this->den = den / n;
 }
+
 
