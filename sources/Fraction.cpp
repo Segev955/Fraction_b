@@ -2,6 +2,7 @@
 using namespace ariel;
 //constructor
 Fraction::Fraction(const int &num1,const int &num2): num(num1) , den(num2) {
+    reduce();
 }
 //copy
 Fraction::Fraction(const Fraction &other) : num(other.num), den(other.den) {}
@@ -186,5 +187,18 @@ Fraction &Fraction::operator--() { //--n
 const Fraction Fraction::operator--(int) { //n--
     Fraction cpy(*this);
     return cpy;
+}
+
+int gcd (int a, int b) {
+    if (a == 0) {
+        return b;
+    }
+    return gcd(b % a, a);
+}
+
+void Fraction::reduce() {
+    int n = gcd(num, den);
+    this->num = num / n;
+    this->den = den / n;
 }
 

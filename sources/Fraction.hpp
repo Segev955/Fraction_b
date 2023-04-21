@@ -62,6 +62,7 @@ public:
 
     operator double() const; //convert to double
     operator string() const;
+    void reduce();
 
 };
 
