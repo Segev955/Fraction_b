@@ -18,10 +18,10 @@ public:
     Fraction(const int &num1,const int &num2);
     Fraction(int n);
     Fraction(const Fraction &other);
-//    Fraction(double num);
+    Fraction(double num);
 
-    int getNum() const;
-    int getDen() const;
+    int getNumerator() const;
+    int getDenominator() const;
     Fraction operator+(const Fraction &other);
     Fraction operator+(const double &other);
 
@@ -69,6 +69,7 @@ public:
 
 
 #endif //FRACTION_A_FRACTION_H
+
 
 
 

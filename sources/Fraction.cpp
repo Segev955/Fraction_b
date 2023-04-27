@@ -20,14 +20,14 @@ Fraction::operator double() const {
 //    return to_string(num) + "/" + to_string(den);
 //}
 
-//Fraction::Fraction(double num) {
-//    this->num = num;
-//    this->den = 1;
-//}
+Fraction::Fraction(double num) {
+    this->num = num;
+    this->den = 1;
+}
 
-int Fraction::getNum() const { return this->num; }
+int Fraction::getNumerator() const { return this->num; }
 
-int Fraction::getDen() const { return this->den; }
+int Fraction::getDenominator() const { return this->den; }
 
 //add
 Fraction Fraction::operator+(const Fraction &other) {
@@ -207,5 +207,6 @@ void Fraction::reduce() {
     this->num = num / n;
     this->den = den / n;
 }
+
 
 
