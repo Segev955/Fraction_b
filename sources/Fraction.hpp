@@ -6,6 +6,10 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
+#include <cmath>
+#include <iomanip>
+
+
 
 namespace ariel {}
 using namespace std;
@@ -15,41 +19,60 @@ private:
     int num;
     int den;
 public:
+    Fraction();
     Fraction(const int &num1,const int &num2);
     Fraction(int n);
     Fraction(const Fraction &other);
     Fraction(double num);
-
+    Fraction(float num);
+//getters:
     int getNumerator() const;
     int getDenominator() const;
-    Fraction operator+(const Fraction &other);
-    Fraction operator+(const double &other);
 
+    Fraction operator+(const Fraction &other);
+    Fraction operator+(const float &other);
+    Fraction operator+(const double &other);
+    Fraction operator+(const int &other);
 
     Fraction operator-(const Fraction &other);
+    Fraction operator-(const float &other);
     Fraction operator-(const double &other);
     Fraction operator-(const int &other);
 
     Fraction operator*(const Fraction &other);
+    Fraction operator*(const float &other);
     Fraction operator*(const double &other);
+    Fraction operator*(const int &other);
 
     Fraction operator/(const Fraction &other);
+    Fraction operator/(const float &other);
     Fraction operator/(const double &other);
+    Fraction operator/(const int &other);
 
     bool operator==(const Fraction &other);
+    bool operator==(const float &other);
     bool operator==(const double &other);
+    bool operator==(const int &other);
 
     bool operator>(const Fraction &other);
+    bool operator>(const float &other);
     bool operator>(const double &other);
+    bool operator>(const int &other);
 
     bool operator<(const Fraction &other);
+    bool operator<(const float &other);
     bool operator<(const double &other);
+    bool operator<(const int &other);
 
     bool operator<=(const Fraction &other);
+    bool operator<=(const float &other);
     bool operator<=(const double &other);
+    bool operator<=(const int &other);
 
     bool operator>=(const Fraction &other);
+    bool operator>=(const float &other);
     bool operator>=(const double &other);
+    bool operator>=(const int &other);
 
     friend std::ostream &operator<<(std::ostream &output, const Fraction &fraction);
 
@@ -63,12 +86,14 @@ public:
 
     operator double() const; //convert to double
     operator string() const;
+    void setPre(float num);
     void reduce();
 
 };
 
 
 #endif //FRACTION_A_FRACTION_H
+
 
 
 

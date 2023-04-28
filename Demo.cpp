@@ -17,6 +17,7 @@ using namespace ariel;
 
 
 int main() {
+    cout << "BBBBBBBBB: " << 1 == 1.1 << endl;
     Fraction a(5,3), b(14,21);
     cout << "a: " << a << "b: " << b << endl;
     cout << "a+b" << a+b << endl; 
@@ -35,3 +36,4 @@ int main() {
 
 
 }
+
