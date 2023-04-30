@@ -101,7 +101,7 @@ TEST_CASE("Division by zero throws an exception") {
     CHECK_THROWS(a / 0);
 }
 
-//// Using CHECK_FALSE during (<,>,<=,>=,==) to avoid things like auto-true
+// Using CHECK_FALSE during (<,>,<=,>=,==) to avoid things like auto-true
 TEST_CASE("Fraction < comparison operator") {
     Fraction a(1, 2);
     Fraction b(1, 4);
@@ -158,7 +158,7 @@ TEST_CASE("Fraction == comparison operator") {
 
     CHECK(b == d); // Pure equality
     CHECK(a == c); // Reduced equality
-//    CHECK(a == b);
+    CHECK_FALSE(a == b);
     CHECK(a == 0.5);
     CHECK_FALSE(a == 0.3);
     CHECK(0.5 == a);
@@ -248,5 +248,5 @@ TEST_CASE("Rounding of float numbers during arithmetic operations with Fractions
 
     b = 0.2001;
     c = a / b; // 2/1
-//    CHECK(((c.getNumerator() == 2) && (c.getDenominator() == 1)));
+    CHECK(((c.getNumerator() == 2) && (c.getDenominator() == 1)));
 }
