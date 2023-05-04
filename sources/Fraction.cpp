@@ -258,8 +258,7 @@ bool Fraction::overMul(const Fraction &fra1, const Fraction &fra2) const {
     int max_int = std::numeric_limits<int>::max();
     return ((fra1.num == max_int && fra1.den != max_int)
             || (fra1.den == max_int && fra1.num != max_int)
-            || (fra2.num == max_int && fra2.den != max_int)
-            || (fra2.den == max_int && fra2.den != max_int));
+            || (fra2.num == max_int && fra2.den != max_int));
 }
 
 
